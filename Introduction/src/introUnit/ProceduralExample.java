@@ -14,5 +14,10 @@ public class ProceduralExample {
     	System.out.println("My name is " +names[0]+ " and I am a " +years[0]+ ".");
     	System.out.println("My name is " +names[1]+ " and I am a " +years[1]+ ".");
     	System.out.println("My name is " +names[2]+ " and I am a " +years[2]+ ".");
+    /*
+    Encapsulation ex. private fields
+    Polymorphism ex. calling a Senior a student
+    Inheritance ex. inheriting the talk method
+     */
   }
 }
