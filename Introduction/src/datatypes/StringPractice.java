@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class StringPractice {
 	static Scanner input;
 	static String user;
+	static boolean inLoop;
+	static String response;
 	static int lineCount;
+	
 	public static void main(String[] args) {
 		createAScanner();
 		lineCount = 0;
@@ -11,21 +14,63 @@ public class StringPractice {
 		promptName();
 		talkForever();
 	}
-
+	public static String getInput(){
+		return input.nextLine();
+	}
 	public static void promptName(){
-		print("Hello, human! I am a board covered with semiconductors \nand other such "
+		print("Hello, human! I am a board covered with semiconductors and other such "
 				+ "electronic components, What is your name?");
 		user = input.nextLine();
 		print("Awesome, I will call you "+user+" until you terminate me.");
 	}
 	public static void talkForever(){
-		while(true){
-			promptInput();
+		inLoop = true;
+		while(inLoop){
+			print("Greetings, "+user+". How are you?");
+			response = getInput();
+			if(response.indexOf("good") >= 0)
+				print("I'm so happy you're good");
+			else
+				print("I'm sorry, I don't understand you.");
+			
+				
+			
+			
 		}
 	}
 	public static void print(String s){
-		lineCount++;
-		System.out.println("Line #"+lineCount+": "+s);
+		//lineCount++;
+		//System.out.println("Line #"+lineCount+": "+s);
+		
+		//create a multi-line string
+		String printString = "";
+		int cutoff = 35;
+		//check to see if there are words to add
+		
+		while(s.length()>0){
+			String currentLine = "";
+			String nextWord = "";
+			//while currentLine/nextLine are less than cutoff, and there are still words to add
+			//do the following
+			while(currentLine.length() + nextWord.length() <= cutoff && s.length() > 0){
+				//add the next word to the line
+				currentLine += nextWord;
+				//remove that word
+				s = s.substring(nextWord.length());
+				//get the following word
+				int endOfWord = s.indexOf(" ");
+				//check to see if this is the last word
+				if(endOfWord == -1){
+					endOfWord = s.length() -1;
+				}
+				//get the next word and space
+				nextWord = s.substring(0,endOfWord+1);
+			}
+			printString += currentLine +"\n";
+		}
+			
+		
+		
 	}
 	public static void promptInput(){
 		print(user+", type an input.");
