@@ -11,7 +11,7 @@ public class School implements Topic{
 	public void talk(){
 		inSchoolLoop = true;
 		while(inSchoolLoop){
-			MatthewNMain.print("Tell me anout school.");
+			MatthewNMain.print("Tell me about school.");
 			schoolResponse = MatthewNMain.getInput();
 			
 			if(schoolResponse.indexOf("stop")>= 0){
