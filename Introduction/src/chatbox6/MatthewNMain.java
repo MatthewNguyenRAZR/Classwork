@@ -119,6 +119,7 @@ public class MatthewNMain {
 	static boolean inLoop;
 	static String response;
 	static Topic school;
+	static Topic like;
 	//static int lineCount;
 
 	public static void main(String[] args) {
@@ -143,9 +144,9 @@ public class MatthewNMain {
 			//promptInput();
 			print("Greetings, "+user+". How's it going?");
 			response = getInput();
-			if(findKeyword(response, "good", 0))
+			if(findKeyword(response, "good", 0) >= 0)
 				print("Good looks");
-			else if(response.indexOf("school")>=0){
+			else if(findKeyword(response,"school",0)>=0){
 				inLoop = false;
 				school.talk();
 			}
@@ -154,30 +155,67 @@ public class MatthewNMain {
 		}
 	}
 
-	private static boolean findKeyword(String searchString, String key, int startIndex) {
+	public static int findKeyword(String searchString, String key, int startIndex) {
 			String phrase = searchString.trim().toLowerCase();
 			//set all letters to lowercase
 			key.toLowerCase();
+			
+			//System.out.println("The phrase is "+phrase);
+			//System.out.println("The key is "+key);
+			
 			//find position of key
 			int psn = phrase.indexOf(key);
 			//kep looking for the word until you find the right context
 		while(psn >= 0){
+			//System.out.println("The position found is "+psn);
 			//if phrase doesn't end with this word
 			String before = " ";
 			String after = " ";
 			if(psn + key.length() < phrase.length()){
-				after = phrase.substring(psn + key.length(), psn + key.length()+1).toLowerCase();
+				after = phrase.substring(psn + key.length(), psn + key.length()+1);
+				//System.out.println("The character after "+key+" is "+after);
 			}
 			//if the phrase does not begin with this word
 			if(psn > 0){
 				before = phrase.substring(psn-1,psn).toLowerCase();
+				//System.out.println("The character before "+key+" is "+before);
 			}
 			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
-				return true;
+				//System.out.println(key+" was found at "+psn);
+				if(noNegations(phrase, psn)){
+					return psn;
+				}
+				//return psn;
 			}
 			psn = phrase.indexOf(key,psn+1);
+			//System.out.println(key+" was not found. Checking "+psn);
 		}
-		return false;
+		return -1;
+	}
+
+	private static boolean noNegations(String phrase, int index) {
+		//helper method that contributes functionality to another method
+		//help make methods readable
+		//method is private, only used by the method it is helping
+		//check for word "NO " (3 characters)
+		//check to see if there is a space for the word
+		//"NO " to be in front of the index
+		if(index-3 >= 0 && phrase.substring(index-3,index).equals("no ")){
+			return false;
+		}
+		//check for "not "
+		if(index-4 >= 0 && phrase.substring(index-4,index).equals("not ")){
+			return false;
+		}
+		//check for "never "
+		if(index-6 >= 0 && phrase.substring(index-6,index).equals("never ")){
+			return false;
+		}
+		//check for "n't"
+		if(index-4 >= 0 && phrase.substring(index-4,index).equals("n't ")){
+			return false;
+		}
+		return true;
 	}
 
 	public static void promptInput() {
@@ -190,6 +228,7 @@ public class MatthewNMain {
 	public static void createTopics() {
 		input = new Scanner(System.in);
 		school = new School();
+		like = new MatthewMLike();
 		
 	}
 	public static void print(String s){
