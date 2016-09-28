@@ -27,4 +27,15 @@ public class MatthewNLike implements Topic{
 			}
 		}
 	}
+
+	@Override
+	public boolean isTriggered(String userInput) {
+		if(MatthewNMain.findKeyword(userInput, "school", 0)>=0){
+			return true;
+		}
+		if(MatthewNMain.findKeyword(userInput, "class", 0)>=0){
+			return true;
+		}
+		return false;
+	}
 }

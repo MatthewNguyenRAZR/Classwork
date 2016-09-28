@@ -150,6 +150,10 @@ public class MatthewNMain {
 				inLoop = false;
 				school.talk();
 			}
+			else if(findKeyword(response,"like",0) >=0){
+				inLoop = false;
+				like.talk();
+			}
 			else
 				print("I'm sorry, I don't understand?");
 		}
@@ -228,7 +232,7 @@ public class MatthewNMain {
 	public static void createTopics() {
 		input = new Scanner(System.in);
 		school = new School();
-		like = new MatthewMLike();
+		like = new MatthewNLike();
 		
 	}
 	public static void print(String s){
