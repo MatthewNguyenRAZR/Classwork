@@ -120,6 +120,7 @@ public class MatthewNMain {
 	static String response;
 	static Topic school;
 	static Topic like;
+	static Topic hello;
 	//static int lineCount;
 
 	public static void main(String[] args) {
@@ -153,6 +154,10 @@ public class MatthewNMain {
 			else if(findKeyword(response,"like",0) >=0){
 				inLoop = false;
 				like.talk();
+			}
+			else if(findKeyword(response,"hello",0) >=0){
+				inLoop = false;
+				hello.talk();
 			}
 			else
 				print("I'm sorry, I don't understand?");
@@ -233,6 +238,7 @@ public class MatthewNMain {
 		input = new Scanner(System.in);
 		school = new School();
 		like = new MatthewNLike();
+		hello = new MatthewNHello();
 		
 	}
 	public static void print(String s){
