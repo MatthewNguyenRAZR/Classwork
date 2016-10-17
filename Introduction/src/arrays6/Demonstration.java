@@ -1,5 +1,5 @@
 package arrays6;
-//unused code
+//unused code (ignore)
 import java.util.Random;
 public class Demonstration {
 	int[] OneToFifty = new int[50];
