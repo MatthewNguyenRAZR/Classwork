@@ -79,6 +79,8 @@ import java.util.Random;
 public class ArraysMain {
 	static int[] OneToFifty = new int[50];
 	static int[] RandomInteger = new int[50];
+	static int[] results;
+	
 	
 	public static void main(String[] args) {
 		/*
@@ -114,6 +116,24 @@ public class ArraysMain {
 			RandomInteger[index] = RandomZerotoNinetyNine;
 		}
 	}
+	
+	
+	private static void populateDieArray(){
+		
+	}
+	
+	private static void populateResultsArray(int[] numsRolled){
+		for(int d = 0; d<numsRolled.length;d++){
+			results[numsRolled[d]-2]++;
+		}
+	}
+	private static void printResults(int[] arr){
+		for(int i = 0; i<arr.length;i++){
+			System.out.println((i+2)+" is rolled "+((double)arr[i]/dieArray.length*100)+" % of the time.");
+		}
+	}
+	
+	
 	
 	private static void passByValueDemo(){
 		//arrayIntroMethod();
