@@ -19,8 +19,7 @@ public class ArrayMethods {
 	 * @param j
 	 * @param length
 	 */
-	private static boolean checkHalfway(int[] arr, int i, int j, int length, 
-			int searchValue,int begin, int end){
+	private static boolean checkHalfway(int[] arr,int searchValue,int begin, int end){
 		return searchValue < arr[(begin+end)/2];
 		
 		
