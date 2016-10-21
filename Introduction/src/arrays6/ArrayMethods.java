@@ -7,7 +7,7 @@ public class ArrayMethods {
 			System.out.println("The number you are searching for is "
 					+ "less than the value of the middle array");
 		}else{
-			System.out.println("The number you are searching for is "
+			System.out.println("The number you are searching for is " 
 					+ "greater than or equal to the value of the middle array");
 		}
 	}
@@ -21,7 +21,5 @@ public class ArrayMethods {
 	 */
 	private static boolean checkHalfway(int[] arr,int searchValue,int begin, int end){
 		return searchValue < arr[(begin+end)/2];
-		
-		
 	}
 }
