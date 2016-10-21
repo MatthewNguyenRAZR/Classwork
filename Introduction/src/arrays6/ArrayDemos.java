@@ -12,7 +12,7 @@ public class ArrayDemos {
 		int[] numsArr = new int[50];
 		for(int n=0;n<numsArr.length;n++){
 			numsArr[n] = n+1;
-			System.out.println("Index "+n+": "+numsArr[n]);
+			System.out.println("Index "+n+": "+numsArr[n]); 
 		}
 	}
 	public static void populateRandArray(){
