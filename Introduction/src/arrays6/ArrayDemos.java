@@ -8,7 +8,7 @@ public class ArrayDemos {
 		createDeck();
 	    //swapDemo();
 	}
-	public static void populateArray(){
+	public static void populateArray(){ 
 		int[] numsArr = new int[50];
 		for(int n=0;n<numsArr.length;n++){
 			numsArr[n] = n+1;
