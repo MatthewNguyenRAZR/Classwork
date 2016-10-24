@@ -61,4 +61,22 @@ public class ArrayDemos {
 			int[] newArray = array;
 	        return newArray;
 	}
+	/*
+	public static void selectionSort(int[] array){
+        System.out.println("Selection sort with "+Arrays.toString(array));
+        for (int i = 0; i < array.length - 1; i++){
+            int tempLowIndex = i;
+            for (int j = i + 1; j < array.length; j++){
+                if (array[j] < array[tempLowIndex]){
+                    tempLowIndex = j;
+                }
+            }
+            if(tempLowIndex!=i){
+                 swap(array, tempLowIndex, i);
+                 System.out.println("becomes "+Arrays.toString(array));
+            } 
+       }//end for
+        System.out.println("Ends as "+Arrays.toString(array));
+    }//end method
+    */
 }
