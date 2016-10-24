@@ -5,7 +5,7 @@ public class ArrayDemos {
 		//populateArray();
 		//populateRandArray();
 	    //twoDiceRolls();
-		createDeck();
+		//createDeck();
 	    //swapDemo();
 	}
 	public static void populateArray(){ 
@@ -55,5 +55,10 @@ public class ArrayDemos {
 		swapDemo[0] = swapDemo[1];
 		swapDemo[1] = tempHolder;
 		System.out.println("After: "+swapDemo[0]+","+swapDemo[1]);
+	}
+	
+	public static int[] swap(int[] array,int swap1, int swap2){
+			int[] newArray = array;
+	        return newArray;
 	}
 }
