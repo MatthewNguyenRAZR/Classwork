@@ -14,8 +14,10 @@ public class ArrayMethods {
 		
 		swap(arr,0,arr.length-1);
 		*/
-		shuffle(arr);
+		//shuffle(arrMain);
 		print(arr);
+		
+		print(getSubArray(arr,2,4));
 	}
 	
 	
@@ -51,5 +53,54 @@ public class ArrayMethods {
 		int placeholder = arr[j];
 		arr[j] = arr[i];
 		arr[i] = placeholder;
+	}
+	/*
+	 * returns number of elements in arr less than d
+	 */
+	public static int countUnderBound(double[] arr, double d){
+		int ctr = 0;
+		for(int i = 0;i<arr.length;i++){
+			if(arr[i]<d){
+				ctr++;
+			}
+		}
+		return ctr;
+		
+	}
+	/*
+	 * Example:
+	 * arr = [3,9,6,11,14,26]
+	 * getSubArray(arr,2,4)
+	 * returns[6,11,14]
+	 */
+	public static int[] getSubArray(int[] arr, int startIndex, int endIndex){
+		int[] subArray = new int[endIndex - startIndex +1];
+		for(int i = 0;i<subArray.length;i++){
+			subArray[i] = arr[startIndex+i];
+		}
+		return subArray;
+		
+	}
+	public static boolean contains(int[] arr, int[] subArray){
+		for(int i = 0;i<arr.length;i++){
+			//check the rest of the elements
+			int j = 0;
+			while(j<subArray.length){
+				if(subArray[j] == arr[i+j] && j == subArray.length-1){
+					System.out.println("Found a match at index "+i);
+					return true;
+				}else if(subArray[j] != arr[i]){
+					System.out.println("Did not find a match");
+					break;
+				}
+				j++;
+			}
+		}
+		return false	;
+		
+	}
+	public static void cycleThrough(int[] arr, int n){
+		
+		
 	}
 }
