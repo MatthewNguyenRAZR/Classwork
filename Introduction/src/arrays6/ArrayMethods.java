@@ -15,9 +15,10 @@ public class ArrayMethods {
 		swap(arr,0,arr.length-1);
 		*/
 		//shuffle(arrMain);
-		print(arr);
+		//print(arr);
 		
-		print(getSubArray(arr,2,4));
+		//print(getSubArray(arr,2,4));
+		System.out.println(longestConsecutiveSequence(arr));
 	}
 	
 	
@@ -102,5 +103,31 @@ public class ArrayMethods {
 	public static void cycleThrough(int[] arr, int n){
 		
 		
+	}
+	public static int longestConsecutiveSequence(int[] array1){
+        /**This method counts the longest consequtive sequence in an array.
+         * It does not matter where the sequence begins
+         * If there are no consecutive numbers, the method should return '1'
+         * int[] arr = {2,3,4,6,9,11,12,15};
+         * Examples:
+         * longestSequence({1,2,3,4,5,8,9}) returns '5', since the sequence '1,2,3,4,5' is 5 integers long 
+         * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
+         * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
+         * */
+        
+        int maxChain = 0;
+        int currentChain = 0;
+        for(int i = 0; i < array1.length-1; i++){
+            if(array1[i]==array1[i+1]-1){
+                currentChain++;
+            }else{
+                if(currentChain>maxChain){
+                    maxChain = currentChain;
+                }
+                currentChain=0;
+            }
+            System.out.println(currentChain);
+        }
+        return maxChain;
 	}
 }
