@@ -2,7 +2,7 @@ package arrays6;
 
 public class ArrayMethods {
 	public static void main(String[] args){
-		int[] arr = {2,3,4,6,9,11,12,15};
+		int[] arr = {1,2,3,4,5,6,7,8,9};
 		/*
 		if(checkHalfway(arr,12,0,arr.length-1)){
 			System.out.println("The number you are searching for is "
@@ -19,6 +19,7 @@ public class ArrayMethods {
 		
 		//print(getSubArray(arr,2,4));
 		//System.out.println(longestConsecutiveSequence(arr));
+		testPrime(10);
 	}
 	
 	
@@ -151,5 +152,28 @@ public class ArrayMethods {
 		}
 		return -1;
 	}
-	
+	public static void testPrime(int numberToTest){
+		int lastToCheck = (int)(Math.sqrt(numberToTest));
+		boolean[] theNumbers = new boolean[numberToTest];
+		for(int i = 0;i<numberToTest;i++){
+			theNumbers[i] = true;
+		}
+		theNumbers[0] = false;
+		theNumbers[1] = false;
+		int increment = 2;
+		boolean first = true;
+		for(int test = 0;test<=lastToCheck;test = test+increment){
+			if(!first){
+				theNumbers[test] = false;
+			}else{
+				first = false;
+			}
+		}
+		for(int i = 0;i<numberToTest;i++){
+			if(theNumbers[i]){
+				System.out.println(i+" is prime");
+			}
+		}
+		
+	}
 }
