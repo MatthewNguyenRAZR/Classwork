@@ -18,7 +18,7 @@ public class ArrayMethods {
 		//print(arr);
 		
 		//print(getSubArray(arr,2,4));
-		System.out.println(longestConsecutiveSequence(arr));
+		//System.out.println(longestConsecutiveSequence(arr));
 	}
 	
 	
@@ -130,4 +130,26 @@ public class ArrayMethods {
         }
         return maxChain;
 	}
+	public static void randomNotRepetitiveArray(){
+		int[] arr = {0,1,2,3,4,5,6,7,8,9};
+		int[] randArr = new int[arr.length-1];
+		for(int i = 0;i<randArr.length;i++){
+			int toAdd = arr[(int)Math.random()*arr.length];
+			while(indexOf(randArr,toAdd)>-1){
+				toAdd = arr[(int)Math.random()*arr.length];			
+			}
+			randArr[i] = toAdd;
+		}
+	}
+
+
+	private static int indexOf(int[] arr,int toFind) {
+		for(int i = 0;i<arr.length;i++){
+			if(arr[i]==toFind){
+				return 1;
+			}
+		}
+		return -1;
+	}
+	
 }
