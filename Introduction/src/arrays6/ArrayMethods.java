@@ -160,18 +160,24 @@ public class ArrayMethods {
 		}
 		theNumbers[0] = false;
 		theNumbers[1] = false;
-		int increment = 2;
-		boolean first = true;
-		for(int test = 0;test<=lastToCheck;test = test+increment){
-			if(!first){
-				theNumbers[test] = false;
-			}else{
-				first = false;
+		for(int prime = 2;prime <= lastToCheck;prime++){
+			//when checking 50 numbers
+				//tests 2,3,4,5,6,7
+			if(theNumbers[prime]){
+				//only check numbers that are prime and aren't crossed off
+				//won't check 4,6
+				System.out.print(prime+" is prime, Crossingoff:");
+				
+				for(int test = prime+prime;test<numberToTest;test = test+prime){
+					theNumbers[test] = false;
+					System.out.print(test+", ");
+				}
 			}
+			System.out.println("");
 		}
 		for(int i = 0;i<numberToTest;i++){
 			if(theNumbers[i]){
-				System.out.println(i+" is prime");
+				System.out.println(i+" is prime.");
 			}
 		}
 		
