@@ -27,6 +27,7 @@ each room has description
 	}
 	public void enter(){
 		//sets up cave when entered
+		this.contents = "x";
 	}
 
 }

@@ -10,7 +10,7 @@ player has inventory
 */
 	public static CaveRoom caves[][];
 	public static Scanner in;
-	public static CaveRoom cirrentRoom;
+	public static CaveRoom currentRoom;
 	public static Inventory inventory;
 	
 	public static void main(String[] args){
