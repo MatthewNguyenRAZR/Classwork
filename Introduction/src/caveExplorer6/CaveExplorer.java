@@ -14,6 +14,8 @@ player has inventory
 	public static Inventory inventory;
 	
 	public static void main(String[] args){
+		in = new Scanner(System.in);
+		
 		caves = new CaveRoom[5][5];
 		for(int row = 0;row < caves.length;row++){
 			for(int col = 0;col < caves[row].length;row++){
@@ -22,6 +24,6 @@ player has inventory
 		}
 		currentRoom = caves[0][1];
 		currentRoom.enter();
-		
+		caves[0][1].setConnection(caves[0][2]);
 	}
 }
