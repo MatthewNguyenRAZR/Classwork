@@ -32,7 +32,7 @@ player has inventory
 
 	private static void startExploring() {
 		while(true){
-			System.out.println(Inventory.getDescription());
+			System.out.println(inventory.getDescription());
 			System.out.println(currentRoom.getDescription());
 			System.out.println("What would you like to do?");
 			String input = in.nextLine();

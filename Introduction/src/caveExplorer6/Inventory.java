@@ -12,7 +12,7 @@ public class Inventory {
 		
 	}
 	public String getDescription(){
-		if(hasMap){
+		if(hasMap){ 
 			return map;
 		}else{
 			return "There is nothing in your inventory";
