@@ -23,10 +23,32 @@ public class practiceClass {
 	}
 	
 	private static void matchValues(String[][] field, boolean[][] mines) {
-		
+		for(int row = 0;row < field.length;row++){
+			for(int col = 0;col < field[0].length;col++){
+				if(mines[row][col]){
+					field[row][col] = "X";
+				}else{
+					field[row][col] = countAdjacent(mines, row, col);
+				}
+			}
+		}
 		
 	}
 	
+	private static String countAdjacent(boolean[][] mines, int r, int c) {
+		//r and c represent coordinates of element we are providing a String for
+		int count = 0;
+		//loop through row above to row below
+		for(int row = r-1;row <= r+1;row++){
+			//loop through col left to col right
+			for(int col = c-1;col <= c+1;col++){
+				if(row!=r && col!=c){
+					
+				}
+			}
+		}
+		return null;
+	}
 	public static void printBackgroundBorders(){
 		String[][] pic = new String[10][8];
 		for(int row = 0;row < pic.length;row++){
