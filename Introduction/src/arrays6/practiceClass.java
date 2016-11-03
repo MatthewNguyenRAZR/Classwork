@@ -5,6 +5,29 @@ public class practiceClass {
 	
 	
 	public static void main(String[] args){
+		boolean[][] mines = new boolean[6][6];
+		createMines(mines,10);
+		String[][] field = new String[mines.length][mines[0].length];
+		matchValues(field,mines);
+		printPic(field);
+	}
+	private static void createMines(boolean[][] mines, int numberOfMines){
+		while(numberOfMines>0){
+			int row = (int)(Math.random()*mines.length);
+			int col = (int)(Math.random()*mines[0].length);
+			if(!mines[row][col]){
+				mines[row][col] = true;
+				numberOfMines--;
+			}
+		}
+	}
+	
+	private static void matchValues(String[][] field, boolean[][] mines) {
+		
+		
+	}
+	
+	public static void printBackgroundBorders(){
 		String[][] pic = new String[10][8];
 		for(int row = 0;row < pic.length;row++){
 			for(int col = 0;col < pic[row].length;col++){
