@@ -12,9 +12,9 @@ public class practiceClass {
 		//generates top border
 		for(int top = 0;top<row;top++){
 			if(top<row-1){
-				System.out.print("____");
+				System.out.print(" ___");
 			}else{
-				System.out.println("____");
+				System.out.println(" ___");
 			}
 		}
 		for(int c = 0;c < col;c++){
