@@ -50,7 +50,19 @@ public class practiceClass {
 		}
 		
 	}
-	
+	private static void printConnectFour(int row, int col){
+		for(int c = 0;c < col;c++){
+			//left and right and bottom of room walls
+			for(int r = 0;r < row;r++){
+					if(r<row-1){
+						System.out.print("| |");
+					}else{
+						System.out.println("| |");
+					}
+			}
+		}
+		
+	}
 	
 	private static void generateMineSweeper(){
 		boolean[][] mines = new boolean[6][6];
