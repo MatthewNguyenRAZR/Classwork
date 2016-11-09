@@ -38,6 +38,5 @@ player has inventory
 			String input = in.nextLine();
 			currentRoom.interpretInput(input);
 		}
-		
 	}
 }
