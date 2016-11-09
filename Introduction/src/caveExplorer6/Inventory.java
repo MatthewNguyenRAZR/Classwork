@@ -8,7 +8,7 @@ public class Inventory {
 		hasMap = true;
 		updateMap();
 	}
-	private void updateMap() {
+	public void updateMap() {
 		map = " ";
 		for(int i = 0; i< CaveExplorer.caves[0].length -1;i++){
 			map+="____";//4 underscores
