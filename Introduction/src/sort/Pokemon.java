@@ -1,12 +1,12 @@
 package sort;
 
-public class pokemon {
+public class Pokemon {
 	private int level;
 	private int hp;
 	private String name;
 	private boolean poisoned;
 	
-	public pokemon(String name, int level) {
+	public Pokemon(String name, int level) {
 		this.name = name;
 		this.hp = 100;
 		this.level = level;
@@ -16,19 +16,31 @@ public class pokemon {
 		System.out.println(this.name);
 		System.out.println(this.name);
 	}
+	public int getHP(){
+		return this.hp;
+	}
 	public String getName(){
 		return this.name;
 	}
-	public int setHP(int newHP){
-		return this.hp = newHP;
+	public void setHP(int newHP){
+		this.hp = newHP;
 	}
 	public void setPoisoned(boolean b){
 		this.poisoned = b;
 	}
 	public void lapse(){
-		
+		if(this.poisoned && this.hp < 15)
+			this.hp = 0;
+		else if(this.hp < 15)
+			this.hp--;
 	}
-	public void attack(){
-		
+	public void attack(Pokemon target, Attack attack){
+		 if(Math.random() < .9){
+			 attack.attack(target);
+			 System.out.println("The attack hit.");
+		 }
+		 else{
+			 System.out.println("The attack missed.");
+		 }
 	}
 }
