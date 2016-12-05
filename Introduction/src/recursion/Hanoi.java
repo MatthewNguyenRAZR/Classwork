@@ -2,7 +2,7 @@ package recursion;
 
 public class Hanoi {
 	public static void main(String[] args) {
-		hanoi(8,"A","B","C");
+		hanoi(3,"A","B","C");
 	}
 	private static void hanoi(int numberOfDiscs, String from, String mid, String to) {
 		if(numberOfDiscs<2){
