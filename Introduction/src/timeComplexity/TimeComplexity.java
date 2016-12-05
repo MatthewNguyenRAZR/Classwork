@@ -10,12 +10,13 @@ public class TimeComplexity {
 	}
 	
 	public double getAverage(double[] values){
-		double sum=0.0;
-		for(int i = 0; i<values.length; i++){
-		sum+=values[i];
+		double sum=0.0;							//1
+		for(int i = 0; i<values.length; i++){	//2(n+1)
+		sum+=values[i];							//2n
 		}
-		return sum/values.length;
-	}
+		return sum/values.length;				//2
+	}											//4n+5
+	
 	public boolean isPrime(int n){
 		boolean prime = true;					//1
 		for(int i = 2; i<n; i++){				//2(n+1-2) = 2n-1
