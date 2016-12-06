@@ -2,9 +2,6 @@ package timeComplexity;
 
 public class TimeComplexity {
 	
-	public static void main(String[] args) {
-		
-	}
 	public TimeComplexity() {
 		// TODO Auto-generated constructor stub
 	}
