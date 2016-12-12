@@ -19,8 +19,10 @@ public abstract class GUIApplication extends JFrame{
 		description of methods
 		methods = only useful to subclasses that inherit this class
 	
-	abstract:"
-	
+	abstract - "
+	GUIApplication - MouseFollower
+	Screen - CoordinateScreen
+	Visible - Component - TextLabel
 	*/
 	
 	//demo purposes only
