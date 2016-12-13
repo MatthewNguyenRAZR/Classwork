@@ -5,6 +5,20 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 
 public abstract class GUIApplication extends JFrame{
+	/*
+	What is the purpose of abstract classes?
+	So that children can do their own thing.  Game engine used to make programming games easier
+	
+	Why are there 2 update methods in Component?
+	
+	
+	How does the CoordinateScreen Display text?
+	
+	
+	Why are we using ArrayList instead of Array?
+	So that classes can be dynamic, being able to add and remove items from the list
+	 
+	 */
 	//FIELDS
 	private Screen currentScreen;
 	
