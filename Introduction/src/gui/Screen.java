@@ -1,14 +1,6 @@
 package gui;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
-import gui.components.Visible;
-
-public abstract class Screen {
 	/*
 					Arrays					ArrayList
 	declaration		int[] numbs				ArrayList<Integer>numbs
@@ -21,6 +13,18 @@ public abstract class Screen {
 	
 	
 	*/
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import gui.components.Visible;
+
+public abstract class Screen {
 	private BufferedImage image;
 	private ArrayList<Visible> viewObjects;
 	//private List viewObjects;  (ArrayList is a type of List)
@@ -43,53 +47,6 @@ public abstract class Screen {
 		g.setColor(Color.white);
 		g.fillRect(0, 0, image.getWidth(), image.getHeight());
 		g.setColor(Color.black);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		//g.drawString("Hello World", 40, 100);
 		//g.drawOval(20, 70, 100, 50);
 		
@@ -109,6 +66,20 @@ public abstract class Screen {
 	public int getHeight(){
 		return image.getHeight();
 	}
+	public MouseListener getMouseListener() {
+		return null;
+	}
 	
+	public MouseMotionListener getMouseMotionListener() {
+		return null;
+	}
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

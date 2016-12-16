@@ -30,6 +30,7 @@ So that classes can be dynamic, being able to add and remove items from the list
 	Visible - Component - TextLabel
 	*/
 import java.awt.Graphics;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 
@@ -50,8 +51,16 @@ public abstract class GUIApplication extends JFrame{
 		setVisible(true);
 	}
 	public abstract void initScreen();
-	public void setScreen(Screen s){
-		currentScreen = s;
+	public void setScreen(Screen screen) {
+		if(currentScreen != null){
+			if(currentScreen.getMouseListener() != null) removeMouseListener(currentScreen.getMouseListener());
+			if(currentScreen.getMouseMotionListener() != null) removeMouseMotionListener(currentScreen.getMouseMotionListener());
+		}
+		currentScreen = screen;
+		if(currentScreen != null){
+			if(currentScreen.getMouseListener() != null)addMouseListener(currentScreen.getMouseListener());
+			if(currentScreen.getMouseMotionListener() != null) addMouseMotionListener(currentScreen.getMouseMotionListener());
+		}
 	}
 	public void paint(Graphics g){
 		g.drawImage(currentScreen.getImage(), 0, 0, null);
