@@ -2,7 +2,8 @@ package gui.components;
 
 import java.awt.image.BufferedImage;
 
-public abstract interface Visible {
+public interface Visible {
+
 	public BufferedImage getImage();
 	public int getX();
 	public int getY();
@@ -10,6 +11,5 @@ public abstract interface Visible {
 	public int getHeight();
 	public boolean isAnimated();
 	public void update();
-	boolean isHovered(int x, int y);
-	void act();
+	
 }
