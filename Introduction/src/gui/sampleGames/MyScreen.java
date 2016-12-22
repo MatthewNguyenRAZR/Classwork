@@ -5,16 +5,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import gui.Graphic;
 import gui.Screen;
 import gui.components.Action;
 import gui.components.Button;
+import gui.components.Clickable;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
-public class MyScreen extends Screen implements MouseListener{
+public class MyScreen extends Screen implements MouseListener,Clickable{
 
 	private TextLabel text;
 	private Button back;
+	private Graphic hennessyvenomgt;
 	
 	public MyScreen(int w, int h) {
 		super(w, h);
@@ -33,6 +36,9 @@ public class MyScreen extends Screen implements MouseListener{
 			}
 		});
 		viewObjects.add(back);
+		
+		hennessyvenomgt = new Graphic(50,300,500,500,"resources/sampleImages/hennessyvenomgt.png");
+		viewObjects.add(hennessyvenomgt);
 	}
 
 	@Override
@@ -62,6 +68,18 @@ public class MyScreen extends Screen implements MouseListener{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean isHovered(int x, int y) {
+		return x>getX() && x<getX()+getWidth() && 
+				y > getY() && y<getY()+getHeight();
+	}
+
+	@Override
+	public void act() {
 		// TODO Auto-generated method stub
 		
 	}
