@@ -1,6 +1,8 @@
 package gui.sampleGames;
 
 import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import gui.Screen;
@@ -9,7 +11,7 @@ import gui.components.Button;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
-public class MyScreen extends Screen{
+public class MyScreen extends Screen implements MouseListener{
 
 	private TextLabel text;
 	private Button back;
@@ -25,12 +27,43 @@ public class MyScreen extends Screen{
 		viewObjects.add(text);
 		System.out.println(viewObjects);
 		
-		back = new Button(20,100,100,40,"Button 2",new Color(100,100,250), new Action() {
+		back = new Button(20,100,120,40,"Back Button",new Color(100,100,250), new Action() {
 			public void act() {
 				MouseFollower.game.setScreen(MouseFollower.cs);
 			}
 		});
 		viewObjects.add(back);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		if(back.isHovered(e.getX(), e.getY())){
+			back.act();
+		}
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
