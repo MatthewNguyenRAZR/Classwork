@@ -49,14 +49,14 @@ public class Graphic implements Visible {
 	@param scale
 	@param imageLocation
 	*/
-	public Graphic(int x, int y,int scale, String imageLocation) {
+	public Graphic(int x, int y,double scale, String imageLocation) {
 		this.x = x;
 		this.y = y;
 		loadedImages = false;
 		loadImages(imageLocation,scale);
 	}
 	
-	private void loadImages(String imageLocation, int scale) {
+	private void loadImages(String imageLocation, double scale) {
 		try{
 			//full size image
 			ImageIcon icon = new ImageIcon(imageLocation);

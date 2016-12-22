@@ -9,11 +9,10 @@ import gui.Graphic;
 import gui.Screen;
 import gui.components.Action;
 import gui.components.Button;
-import gui.components.Clickable;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
-public class MyScreen extends Screen implements MouseListener,Clickable{
+public class MyScreen extends Screen implements MouseListener{
 
 	private TextLabel text;
 	private Button back;
@@ -26,7 +25,7 @@ public class MyScreen extends Screen implements MouseListener,Clickable{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		text = new TextLabel(20,200,500,40,"Here is some text");
+		text = new TextLabel(200, 50,500,40,"Hennessey Venom GT");
 		viewObjects.add(text);
 		System.out.println(viewObjects);
 		
@@ -71,17 +70,4 @@ public class MyScreen extends Screen implements MouseListener,Clickable{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public boolean isHovered(int x, int y) {
-		return x>getX() && x<getX()+getWidth() && 
-				y > getY() && y<getY()+getHeight();
-	}
-
-	@Override
-	public void act() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

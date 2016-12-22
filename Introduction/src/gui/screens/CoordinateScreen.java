@@ -39,10 +39,10 @@ public class CoordinateScreen extends Screen
 		});
 		viewObjects.add(button);
 		
-		text = new TextLabel(20, 200, 500, 40, "Some text");
+		text = new TextLabel(20, 200, 500, 40, "Mouse Coordinates");
 		viewObjects.add(text);
 		
-		area = new TextArea(200, 50,200,80,"There is text here and stuff.");
+		area = new TextArea(200, 50,500,40,"Aston Martin");
 		viewObjects.add(area);
 		
 		astonmartin = new Graphic(50,300,400,400,"resources/sampleImages/astonmartin.png");
