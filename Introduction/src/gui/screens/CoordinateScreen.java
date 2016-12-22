@@ -32,30 +32,23 @@ public class CoordinateScreen extends Screen
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		button = new Button(20,100,80,40,
-				"The Button with a long name",new Color(100,100,250),
-				new Action() {
-			
+		button = new Button(20,100,100,40,"The Button with a long name",new Color(100,100,250), new Action() {
 			public void act() {
-				// TODO Auto-generated method stub
-				
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
 		});
 		viewObjects.add(button);
-		text = 
-				new TextLabel(20, 200, 500, 40, "Some text");
+		
+		text = new TextLabel(20, 200, 500, 40, "Some text");
 		viewObjects.add(text);
+		
 		area = new TextArea(200, 50,200,80,"There is text here and stuff.");
 		viewObjects.add(area);
 		
-		astonmartin = new Graphic(30,30,100,100,"resources/sampleImages/astonmartin.png");
+		astonmartin = new Graphic(50,300,400,400,"resources/sampleImages/astonmartin.png");
 		viewObjects.add(astonmartin);
 		
-		new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
-			public void act(){
-			MouseFollower.game.setScreen(MouseFollower.myScreen);
-			}
-			});
+		
 	}
 
 	public void mouseDragged(MouseEvent e) {
