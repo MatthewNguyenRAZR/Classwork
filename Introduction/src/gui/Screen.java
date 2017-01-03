@@ -77,6 +77,51 @@ public abstract class Screen {
 		viewObjects.add(v);
 	}
 	public void remove(Visible v){
+		/*
+		NoteL in this implementation,
+		we have a very simple command: remove(v)
+		however, remove us a big deal on AP exam because:
+		
+		when object is removed from a list, 
+		every other object after that object is moved up.  
+		Respective indices change.
+		
+		Classic incorrect example:
+		List<integer> with
+		{4,8,7,1}
+		want to remove all integers greater than 5
+		
+		for(int i = 0; i < list.soze(); i++){
+			if(list.get(i)>5){
+				list.remove(i);
+				
+				WRONG because
+				i = 0, nothing changes
+				i = 1, the '8' is removed
+				now we have
+				(4,7,1)
+				i = 2 nothing changes
+				i = 3 exit the loop
+				so (4,7,1) is left
+				
+			}
+		}
+		
+		for(int i = 0; i < list.soze(); i++){
+			while(list.get(i)>5){
+				list.remove(i);
+				i--; //compensate for i++
+			}
+		}
+		
+		for the same reason this doesn't work
+		(because the size can be changed)
+		for(Integer i: list){
+			if(i > 5){
+				list.remove(i);
+			}	
+		}
+		 */
 		viewObjects.remove(v);
 	}
 	// ABSTRACTION 
