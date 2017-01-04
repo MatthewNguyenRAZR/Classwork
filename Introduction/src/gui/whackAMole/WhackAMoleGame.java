@@ -1,11 +1,8 @@
 package gui.whackAMole;
 
-import java.util.ArrayList;
-
 import gui.GUIApplication;
-import gui.components.TextLabel;
 
-public class WhackAMoleGame extends GUIApplication implements Runnable{
+public class WhackAMoleGame extends GUIApplication{
 	
 	public WhackAMoleGame(int width, int height) {
 		super(width, height);
@@ -23,7 +20,5 @@ public class WhackAMoleGame extends GUIApplication implements Runnable{
 		Thread game = new Thread(wamg);
 		game.start();
 	}
-	public static void run(){
-		
-	}
+	
 }

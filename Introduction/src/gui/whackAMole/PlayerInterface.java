@@ -10,5 +10,7 @@ import gui.components.Visible;
  * This is for my partner the Character designer, to implement
  */
 public interface PlayerInterface extends Visible {
+
+	void increaseScore(int i);
 	
 }
