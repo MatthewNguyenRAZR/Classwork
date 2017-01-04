@@ -21,6 +21,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.List;
 
 import gui.components.Visible;
 
@@ -131,4 +132,6 @@ public abstract class Screen {
 		// description of methods + methods 
 			// methods only useful to subclasses that inherit this class
 	// CANNOT INSTANTIATE AN ABSTRACT CLASS !!!!
+
+	public abstract void initObjects(List<Visible> viewObjects);
 }
