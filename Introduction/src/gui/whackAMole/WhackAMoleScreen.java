@@ -19,6 +19,8 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	public WhackAMoleScreen(int width, int height) {
 		super(width, height);
 		timeLeft = 30;
+		//when making Simon, creating a Thread like this
+		//is necessary since Simon's Screen changes
 		Thread play = new Thread(this);
 		play.start();
 	}
@@ -53,7 +55,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 		changeText("Go...");
 		label.setText("");
 		//since this is a timed game, we will use a while loop 
-		//but it is not necessary for games that aren't timed
+		//but it is not necessary for games that aren't timed like simon
 		while(timeLeft > 0){
 			updateTimer();
 			updateAllMoles();
