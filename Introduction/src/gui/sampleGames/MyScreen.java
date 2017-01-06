@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import gui.Graphic;
 import gui.Screen;
@@ -67,6 +68,12 @@ public class MyScreen extends Screen implements MouseListener{
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		
 	}
