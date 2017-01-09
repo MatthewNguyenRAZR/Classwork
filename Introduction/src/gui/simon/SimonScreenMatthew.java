@@ -10,9 +10,9 @@ import gui.screens.ClickableScreen;
 public class SimonScreenMatthew extends ClickableScreen implements Runnable {
 	
 	private TextLabel label;
-	private ButtonInterfaceX[] buttons;
-	private ProgressInterfaceX progress;
-	private ArrayList<MoveInterfaceX> moves;
+	private ButtonInterfaceMatthew[] buttons;
+	private ProgressInterfaceMatthew progress;
+	private ArrayList<MoveInterfaceMatthew> sequence;
 	
 	//FIELDS
 	int roundNumber;
@@ -37,7 +37,7 @@ public class SimonScreenMatthew extends ClickableScreen implements Runnable {
 		addButtons();
 		progress = getProgress();
 		label = new TextLabel(130,230,300,40,"Let's play Simon!");
-		sequence = new ArrayList<MoveInterfaceX>();
+		sequence = new ArrayList<MoveInterfaceMatthew>();
 		//add 2 moves to start
 		lastSelectedButton = -1;
 		sequence.add(randomMove());
@@ -45,18 +45,21 @@ public class SimonScreenMatthew extends ClickableScreen implements Runnable {
 		roundNumber = 0;
 		viewObjects.add(progress);
 		viewObjects.add(label);
-
 	}
 
-	private Object randomMove() {
-		// TODO Auto-generated method stub
-		return null;
+	private MoveInterfaceMatthew randomMove() {
+		int select = (int) (Math.random()*buttons.length);
+		while(select == lastSelectedButton){
+			select = (int) (Math.random()*buttons.length);
+		}
+		lastSelectedButton = select;
+		return new Move(buttons[select]);
 	}
 	
 	/**
 	Placeholder until partner finishes implementation of ProgressInterface
 	*/
-	private ProgressInterfaceX getProgress() {
+	private ProgressInterfaceMatthew getProgress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
