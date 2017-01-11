@@ -10,6 +10,7 @@ import gui.Graphic;
 import gui.Screen;
 import gui.components.Action;
 import gui.components.Button;
+import gui.components.MovingComponent;
 import gui.components.TextLabel;
 import gui.components.Visible;
 
@@ -18,7 +19,7 @@ public class MyScreen extends Screen implements MouseListener{
 	private TextLabel text;
 	private Button back;
 	private Graphic hennessyvenomgt;
-	
+	public MovingComponent c;
 	public MyScreen(int w, int h) {
 		super(w, h);
 		// TODO Auto-generated constructor stub
@@ -39,6 +40,11 @@ public class MyScreen extends Screen implements MouseListener{
 		
 		hennessyvenomgt = new Graphic(50,300,500,500,"resources/sampleImages/hennessyvenomgt.png");
 		viewObjects.add(hennessyvenomgt);
+		MovingComponent c = new MovingComponent(20,20,100,100);
+		viewObjects.add(c);
+		c.setVy(2);
+		c.setVx(1);
+		c.play();
 	}
 
 	@Override

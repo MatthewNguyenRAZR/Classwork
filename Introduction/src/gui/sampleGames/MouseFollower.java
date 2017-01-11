@@ -17,7 +17,7 @@ public class MouseFollower extends GUIApplication {
 	public void initScreen() {
 		cs = new CoordinateScreen(getWidth(), getHeight());
 		myScreen = new MyScreen(getWidth(), getHeight());
-		setScreen(cs);
+		setScreen(myScreen);
 	}
 	public static void main(String[] args) {
 		game = new MouseFollower(500, 500);

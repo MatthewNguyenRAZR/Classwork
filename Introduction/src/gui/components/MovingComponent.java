@@ -41,6 +41,8 @@ public class MovingComponent extends Component implements Runnable{
 		while(running){
 			try {
 				Thread.sleep(REFRESH_RATE);
+				checkBehaviors();
+				update();
 				//I will add code here last
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -94,6 +96,7 @@ public class MovingComponent extends Component implements Runnable{
 
 	
 	
+	
 	/** 
 	 * for demonstration purposes only. Make abstract
 	 * @param g
@@ -125,5 +128,11 @@ public class MovingComponent extends Component implements Runnable{
 			vx=-vx;
 		}
 		
+	}
+	public void play(){
+		if(!running){
+			Thread go = new Thread(this);
+			go.start();
+		}
 	}
 }
