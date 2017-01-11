@@ -1,9 +1,129 @@
 package gui.components;
 
-public class MovingComponent {
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
-	public MovingComponent() {
-		// TODO Auto-generated constructor stub
+public class MovingComponent extends Component implements Runnable{
+	private long moveTime; //time when the image last moved
+	private double vx; //the horizontal velocity
+	private double vy; //the vertical velocity
+	private double posx; //the actual x-coordinate of the object
+	private double posy; //the actual y-coordinate of the object
+	private boolean running;
+
+	public static final int REFRESH_RATE = 20;
+
+	public MovingComponent(int x, int y, int w, int h) {
+		super(x, y, w, h);
+		vx = 0;
+		vy = 0;
 	}
 
+
+	public boolean isAnimated(){
+		return true;
+	}
+	public void setX(int x){
+		super.setX(x);
+		posx = x;
+	}
+	public void setY(int y){
+		super.setY(y);
+		posx = y;
+	}
+	public void run(){
+		posx = getX();
+		posy = getY();
+		running = true;
+		moveTime = System.currentTimeMillis();
+		while(running){
+			try {
+				Thread.sleep(REFRESH_RATE);
+				//I will add code here last
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	@Override
+	public void update(Graphics2D g) {
+		long currentTime = System.currentTimeMillis();
+		int difference = (int)(currentTime - moveTime);
+		if(difference >= REFRESH_RATE){
+			//update displayTime, since an update is ocurring
+			moveTime = currentTime;
+			//calculate what the new position should be.
+			posx += vx*(double)difference/REFRESH_RATE;
+			posy += vy*(double)difference/REFRESH_RATE;
+			//note: for very low velocities, position might not move by much. Therefore,
+			//rounding to an int may not change
+			setX((int)(posx));
+			setY((int)(posy));
+
+		}
+		drawImage(g);
+	}
+	public boolean isRunning(){
+		return running;
+	}
+	
+	public void setRunning(boolean b){
+		running = b;
+	}
+
+	
+
+	public double getVx() {
+		return vx;
+	}
+
+	public void setVx(double vx) {
+		this.vx = vx;
+	}
+
+	public double getVy() {
+		return vy;
+	}
+
+	public void setVy(double vy) {
+		this.vy = vy;
+	}
+
+	
+	
+	/** 
+	 * for demonstration purposes only. Make abstract
+	 * @param g
+	 */
+	public void drawImage(Graphics2D g) {
+		g.setColor(Color.black);
+		g.fillOval(0, 0, getWidth(), getHeight());
+	}
+	
+	/**
+	 * For demonstration purposes only. Make abstract
+	 */
+	public void checkBehaviors(){
+		if(posy+vy > 300){
+			posy = 300;
+			vy=-vy;
+		}
+		else if(posy+vy < 20){
+			posy = 20;
+			vy=-vy;
+		}
+		
+		if(posx+vx > 300){
+			posx = 300;
+			vx=-vx;
+		}
+		else if(posx+vx < 20){
+			posx = 20;
+			vx=-vx;
+		}
+		
+	}
 }

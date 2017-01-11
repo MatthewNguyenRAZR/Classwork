@@ -61,4 +61,13 @@ public abstract class Component implements Visible {
 		image = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
 		return image.createGraphics();
 	}
+
+	public void setX(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setY(int y) {
+		// TODO Auto-generated method stub
+		
+	}
 }
