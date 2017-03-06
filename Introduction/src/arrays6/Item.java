@@ -19,7 +19,7 @@ public class Item {
 		return purchased;
 	}
 	public void setPurchased(boolean b) {
-		this.purchased = b;
+		this.purchased = b; 
 		
 	}
 

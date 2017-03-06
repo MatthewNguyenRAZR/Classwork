@@ -36,7 +36,7 @@ public class ListRunner {
 		}
 		*/
 	}
-	private static String[] getDescriptions() {
+	private static String[] getDescriptions() { 
 		String[] test = {"Clothes","Dryer","Shampoo","Pokeballs"};
 		return test;
 	}
