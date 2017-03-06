@@ -18,15 +18,16 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 		// TODO Auto-generated constructor stub
 	}
 
-	public abstract void initAllObjects(List<Visible> viewObjects);
+	public abstract void initAllObjects(ArrayList<Visible> viewObjects);
 	
 	@Override
-	public void initObjects(List<Visible> viewObjects) {
+	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
 		clickables = new ArrayList<Clickable>();
 		for(Visible v: viewObjects){
 			if(v instanceof Clickable){
 				clickables.add((Clickable)v);
+				System.out.println("Clickable added");
 			}
 		}
 	}

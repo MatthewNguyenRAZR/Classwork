@@ -101,7 +101,7 @@ public class CoordinateScreen extends Screen
 	}
 
 	@Override
-	public void initObjects(List<Visible> viewObjects) {
+	public void initObjects(ArrayList<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		
 	}

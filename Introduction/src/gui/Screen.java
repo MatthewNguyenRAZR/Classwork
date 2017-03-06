@@ -133,5 +133,5 @@ public abstract class Screen {
 			// methods only useful to subclasses that inherit this class
 	// CANNOT INSTANTIATE AN ABSTRACT CLASS !!!!
 
-	public abstract void initObjects(List<Visible> viewObjects);
+
 }
